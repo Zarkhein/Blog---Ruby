@@ -1,0 +1,23 @@
+<%= form_with model: @livre, local:true do |form| %>
+    <p>
+        <%= form.label :titre %>
+        <%= form.text_field :titre %>
+    </p>
+    <p>
+        <%= form.label :auteur %>
+        <%= form.text_field :auteur %>
+    </p>
+    <p>
+        <%= form.label :domaine %>
+        <%= form.text_field :domaine %>
+    </p>
+<%= form.submit "ajouter un livre" %>
+<%end%>
+<% if @livre.errors.any? %>
+    <h2> erreur de saisie, champs vides </h2>
+    <ul>
+        <% @livre.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+        <%end%>
+    </ul>
+<%end%>

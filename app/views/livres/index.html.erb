@@ -1,0 +1,17 @@
+<div>Liste des livres</div>
+<hr>
+<% @leslivres.each do |livre| %>
+<div>titre: <%= livre.titre%> </div>
+<div>auteur: <%= livre.auteur%> </div>
+<div>domaine: <%= livre.domaine%> </div>
+<div><%= link_to "Voir livre", livre_path(livre) %></div>
+<div><%= link_to "modifier le livre", edit_livre_path(livre) %> </div>
+<div> <%= link_to "ajouter nouveau livre", new_livre_path() %> </div>
+<div> <%= button_to "supprimer le livre", livre_path(livre), method: :delete %> </div>
+
+<hr>
+
+
+<% end %>
+
+
